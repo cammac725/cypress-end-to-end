@@ -124,6 +124,7 @@ export default function Form() {
           name='motivation'
           value={formState.motivation}
           onChange={inputChange}
+          data-cy="textarea"
         />
         {errors.motivation.length > 0 ? (
           <p className='error'>{errors.motivation}</p>
@@ -131,7 +132,7 @@ export default function Form() {
       </label>
       <label htmlFor='positions'>
         What would you like to help with?
-        <select id='positions' name='positions' onChange={inputChange}>
+        <select id='positions' name='positions' onChange={inputChange} data-cy="positions">
           <option value='Newsletter'>Newsletter</option>
           <option value='Yard Work'>Yard Work</option>
           <option value='Administrative Work'>Administrative Work</option>
@@ -147,8 +148,8 @@ export default function Form() {
         />
         Terms & Conditions
       </label>
-      {/* displaying our post request data */}
-      <pre>{JSON.stringify(post, null, 2)}</pre>
+      {/* displaying our post request data 
+      <pre>{JSON.stringify(post, null, 2)}</pre> */}
       <button disabled={buttonDisabled}>Submit</button>
     </form>
   );
